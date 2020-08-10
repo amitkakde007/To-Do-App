@@ -15,7 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-
+from Tasks.views import TaskListView, TaskDetailView, TaskCreateView, TaskUpdateView, TaskDeleteView
 urlpatterns = [
-    
+    path('tasklist/', TaskListView, name='Task-List'),
+    path('taskdetail/<int:pk>/', TaskDetailView, name='Task-Details'),
+    path('taskcreate/', TaskCreateView, name='Task-Create'),
+    path('taskupdate/<int:pk>', TaskUpdateView, name='Task-Update'),
+    path('taskdelete/<int:pk>', TaskDeleteView, name='Task-Delete'),
 ]

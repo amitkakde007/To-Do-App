@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
 
     # Local Import
-    'Tasks',
+    'Tasks.apps.TasksConfig',
 ]
 
 MIDDLEWARE = [
