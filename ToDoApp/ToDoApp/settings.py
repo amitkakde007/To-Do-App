@@ -41,6 +41,7 @@ INSTALLED_APPS = [
 
     # Local Import
     'Tasks.apps.TasksConfig',
+    'frontend.apps.FrontendConfig'
 ]
 
 MIDDLEWARE = [
