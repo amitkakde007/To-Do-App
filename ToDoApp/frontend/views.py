@@ -7,4 +7,4 @@ from django.shortcuts import render
 
 
 def Home(request):
-    return render(request, 'frontend/list.html')
+    return render(request, 'frontend/home.html')
