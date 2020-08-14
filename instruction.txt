@@ -1,0 +1,20 @@
+* PYTHON is REQUIRED to run the application
+
+* Install python virtual envrionment [Recommended].
+	- python -m venv myenv
+
+* Install all the packages from the requirements.txt
+	- pip install -r requirements.txt
+
+* Run Django commands to perform DB migrations which will create DB.
+	- cd To-Do-App/ToDoApp/ [To the project folder where manage.py file exists]
+	- python manage.py makemigrations
+	- python manage.py migrate 
+
+* Django requires to create a static file folder seperately to link.
+	-python manage.py collectstatic
+
+* RUN Django server on your localhost.
+	-python manage.py runserver
+
+ENJOY ;)
