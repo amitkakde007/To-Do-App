@@ -48,12 +48,32 @@ function BuildList(){
             
             editTask.addEventListener('click',((event)=>()=>UpdateList(event))(listData[i]))
         }
+        for (i in listData){
+            let deleteTask = document.getElementsByClassName('delete')[i]
+            
+            deleteTask.addEventListener('click',((event)=>()=>DeleteList(event))(listData[i]))
+        }
     })
 }
 
 function UpdateList(e){
     document.getElementById('title').value=e.Title
     activeItemid=e.id
+}
+
+function DeleteList(e){
+    console.log('Clicked',e)
+    postId=e.id
+    deleteUrl=`http://localhost:8000/api/taskdelete/${postId}`
+
+    fetch(deleteUrl,{
+        method:'DELETE',
+        headers:{
+            'Content-type':'application/json',
+            'X-CSRFToken':csrftoken,
+        },
+    
+    }).then(res=>BuildList())
 }
 
     let form = document.getElementById('form-wrapper')
@@ -65,7 +85,7 @@ function UpdateList(e){
     postUrl='http://localhost:8000/api/taskcreate/'
 
     if (activeItemid!=null){
-        postUrl=`http://localhost:8000/api/taskupdate/${activeItemid}/`
+        postUrl=`http://localhost:8000/api/taskupdate/${activeItemid}`
     }
     
     fetch(postUrl,{
@@ -78,6 +98,7 @@ function UpdateList(e){
         
         }).then((res)=>{BuildList(),
         document.getElementById('form').reset()})
+        activeItemid=null
     })
 
 
