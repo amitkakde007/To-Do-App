@@ -3,6 +3,14 @@
 * Install python virtual envrionment [Recommended].
 	- python -m venv myenv
 
+Note: myenv is the folder name you can name it whatever you want just make sure, while following below steps you goto the respective virtual env folder and activate it.
+
+* Start the virtual environment
+	For linux user- source myenv/bin/activate
+	For windows user - cd myenv/scripts
+	                 - activate
+
+
 * Install all the packages from the requirements.txt
 	- pip install -r requirements.txt
 
