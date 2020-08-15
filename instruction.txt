@@ -1,7 +1,10 @@
 * PYTHON is REQUIRED to run the application
 
 * Install python virtual envrionment [Recommended].
-	- python -m venv myenv
+	For linux user	- python3 -m venv myenv
+	For windows user - pip install virtualenv
+			 - virtualenv myenv (Now in which ever directory you are, this will 						      create a virtualenv there)
+			
 
 Note: myenv is the folder name you can name it whatever you want just make sure, while following below steps you goto the respective virtual env folder and activate it.
 
